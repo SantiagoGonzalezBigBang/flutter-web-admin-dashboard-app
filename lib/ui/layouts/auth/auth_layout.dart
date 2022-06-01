@@ -64,7 +64,10 @@ class _SmallBody extends StatelessWidget {
 }
 
 class _LargeBody extends StatelessWidget {
-  const _LargeBody({Key? key, required this.child}) : super(key: key);
+  const _LargeBody({
+    Key? key,
+    required this.child
+  }) : super(key: key);
 
   final Widget child;
 
@@ -78,7 +81,7 @@ class _LargeBody extends StatelessWidget {
       height: size.height * 0.935,
       child: Row(
         children: [
-          const Background(),
+          const Expanded(child: Background()),
           Container(
             width: 600,
             height: double.infinity,

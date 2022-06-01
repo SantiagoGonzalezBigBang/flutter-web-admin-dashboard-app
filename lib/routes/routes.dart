@@ -1,8 +1,11 @@
+import 'package:admin_dashboard/providers/providers.dart';
 import 'package:fluro/fluro.dart';
 
 import 'package:admin_dashboard/ui/views/views.dart';
+import 'package:provider/provider.dart';
 
 part 'admin_handlers.dart';
+part 'dashboard_handlers.dart';
 part 'no_page_found_handlers.dart';
 
 class Routes {
@@ -16,7 +19,7 @@ class Routes {
   static String registerRoute = '/auth/register';
 
   //* Dashboard Routes
-  static String dashboardRoute = '/auth/login';
+  static String dashboardRoute = '/dashboard';
 
 
   //* Configure Routes
@@ -32,7 +35,7 @@ class Routes {
     fluroRouter.define(registerRoute, handler: AdminHandlers.registerHandler, transitionType: TransitionType.none);
 
     //* Dashboard Routes
-    // fluroRouter.define(registerRoute, handler: handler);
+    fluroRouter.define(dashboardRoute, handler: DashboardHandlers.dashboardHandler, transitionType: TransitionType.fadeIn);
   }
 
 

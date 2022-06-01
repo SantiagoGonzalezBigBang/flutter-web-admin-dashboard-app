@@ -3,14 +3,28 @@ import 'package:flutter/material.dart';
 class DashboardLayout extends StatelessWidget {
    
   const DashboardLayout({
-    Key? key
+    Key? key, 
+    required this.child
   }) : super(key: key);
+
+  final Widget child;
   
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Center(
-        child: Text('DashboardLayout'),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text(
+              'Dashboard',
+              style: TextStyle(
+                fontSize: 50.0
+              ),
+            ),
+            Expanded(child: child)
+          ],
+        ),
       ),
     );
   }
