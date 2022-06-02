@@ -5,10 +5,10 @@ import 'package:provider/provider.dart';
 import 'package:admin_dashboard/routes/routes.dart';
 import 'package:admin_dashboard/providers/providers.dart';
 import 'package:admin_dashboard/services/services.dart';
-import 'package:admin_dashboard/ui/layouts/layouts.dart';
+import 'package:admin_dashboard/design/layouts/layouts.dart';
 
 void main() async {
-  await LocalStorage.configureSharedPreferences();
+  await LocalStorageService.configureSharedPreferences();
   Routes.configureRoutes();
   runApp(const AppState());
 }
@@ -23,6 +23,10 @@ class AppState extends StatelessWidget {
         ChangeNotifierProvider(
           lazy: false,
           create: (context) => AuthProvider()
+        ),
+        ChangeNotifierProvider(
+          lazy: false,
+          create: (context) => SidebarProvider()
         )
       ],
       child: const MyApp(),

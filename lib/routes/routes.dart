@@ -1,8 +1,9 @@
-import 'package:admin_dashboard/providers/providers.dart';
 import 'package:fluro/fluro.dart';
 
-import 'package:admin_dashboard/ui/views/views.dart';
 import 'package:provider/provider.dart';
+
+import 'package:admin_dashboard/providers/providers.dart';
+import 'package:admin_dashboard/design/views/views.dart';
 
 part 'admin_handlers.dart';
 part 'dashboard_handlers.dart';
@@ -20,6 +21,9 @@ class Routes {
 
   //* Dashboard Routes
   static String dashboardRoute = '/dashboard';
+  static String iconsRoute     = '/dashboard/icons';
+  static String blankRoute     = '/dashboard/blank';
+
 
 
   //* Configure Routes
@@ -36,6 +40,8 @@ class Routes {
 
     //* Dashboard Routes
     fluroRouter.define(dashboardRoute, handler: DashboardHandlers.dashboardHandler, transitionType: TransitionType.fadeIn);
+    fluroRouter.define(iconsRoute    , handler: DashboardHandlers.iconsHandler    , transitionType: TransitionType.fadeIn);
+    fluroRouter.define(blankRoute    , handler: DashboardHandlers.blankHandler    , transitionType: TransitionType.fadeIn);
   }
 
 

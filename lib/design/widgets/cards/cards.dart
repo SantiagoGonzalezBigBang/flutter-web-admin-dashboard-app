@@ -1,0 +1,1 @@
+export 'package:admin_dashboard/design/widgets/cards/white_card.dart';

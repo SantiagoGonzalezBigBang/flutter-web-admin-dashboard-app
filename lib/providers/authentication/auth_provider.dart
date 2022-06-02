@@ -1,6 +1,7 @@
+import 'package:flutter/material.dart';
+
 import 'package:admin_dashboard/routes/routes.dart';
 import 'package:admin_dashboard/services/services.dart';
-import 'package:flutter/material.dart';
 
 enum AuthStatus {
   cheking,
@@ -22,7 +23,7 @@ class AuthProvider extends ChangeNotifier {
     
     //* Storage JWT
     _token = 'fsdjfsdjkfndsjjfdsn';
-    LocalStorage.sharedPreferences.setString('token', _token!);
+    LocalStorageService.sharedPreferences.setString('token', _token!);
 
     //* Navigate to Dashboard
     authStatus = AuthStatus.authenticated;
@@ -47,7 +48,7 @@ class AuthProvider extends ChangeNotifier {
   }
 
   Future<bool> isAuthenticated() async {
-    final token = LocalStorage.sharedPreferences.getString('token');
+    final token = LocalStorageService.sharedPreferences.getString('token');
     if (token == null) {
       authStatus = AuthStatus.notAuthenticated;
       notifyListeners();

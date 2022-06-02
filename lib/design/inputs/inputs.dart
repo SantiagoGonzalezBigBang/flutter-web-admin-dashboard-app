@@ -21,12 +21,22 @@ class Inputs {
       hintText: hintText,
       labelText: labelText,
       prefixIcon: Icon(icon, color: Colors.grey,),
-      hintStyle: const TextStyle(
-        color: Colors.grey
-      ),
-      labelStyle: const TextStyle(
-        color: Colors.grey
-      )
+      hintStyle: const TextStyle(color: Colors.grey),
+      labelStyle: const TextStyle(color: Colors.grey)
+    );
+  }
+
+  static InputDecoration searchInputDecoration({
+    required String hintText,
+    required IconData icon,
+  }) {
+    return InputDecoration(
+      border: InputBorder.none,
+      enabledBorder: InputBorder.none,
+      hintText: hintText,
+      prefixIcon: Icon(icon, color: Colors.grey),
+      hintStyle : const TextStyle(color: Colors.grey),
+      labelStyle: const TextStyle(color: Colors.grey)
     );
   }
 

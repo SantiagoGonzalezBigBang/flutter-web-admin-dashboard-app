@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:admin_dashboard/ui/layouts/auth/widgets/widgets.dart';
+import 'package:admin_dashboard/design/layouts/auth/widgets/widgets.dart';
 
 class AuthLayout extends StatelessWidget {
    
